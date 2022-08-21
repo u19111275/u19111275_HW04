@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Flag";
+}
+
+<h2>Flag an area in need of help</h2>
+
+@{
+    if (IsPost)
+    {
+        var field1 = Request["f1"];
+        var field2 = Request["f2"];
+        var field3 = Request["f3"];
+        var tempInfo = field1 + " , " + field2 + " , " + field3 + " , "+ Environment.NewLine;
+
+        var dataStorage = Server.MapPath("~/App_Data/Areas in need.txt");
+        File.AppendAllText(dataStorage, tempInfo);
+    }
+}
+
+<form id="form1" method="post">
+    <table>
+        <tr>
+            <td>
+                <p>Name of place: </p>
+            </td>
+
+            <td>
+                <input id="field1" name="f1" type="text" />
+            </td>
+        <tr />
+        <tr>
+
+            <td>
+                <p>Number of schools in the area: </p>
+            </td>
+
+            <td>
+                <input id="field2" name="f2" type="text" />
+            </td>
+        <tr />
+        <tr>
+
+            <td>
+                <p>Email Address of who to contact: </p>
+            </td>
+
+            <td>
+                <input id="field3" name="f3" type="text" />
+            </td>
+        <tr />
+
+        <tr>
+
+            <td>
+                <p>&nbsp;</p>
+            </td>
+            <td>
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
+    </table>
+</form>

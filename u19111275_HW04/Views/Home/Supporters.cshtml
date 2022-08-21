@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Supporters";
+}
+
+
+
+<h2>Our Supporters</h2>
+<h3>Volunteer Teachers</h3>
+
+@{
+    Array tempData = null;
+    Array temporaryData = null;
+    Array tempInfo = null;
+    char[] delimiter = { ',' };
+    var dataFile = Server.MapPath("~/App_Data/Volunteers.txt");
+    var dataStore = Server.MapPath("~/App_Data/Independant Donors.txt");
+    var dataStorage = Server.MapPath("~/App_Data/Areas in need.txt");
+    tempData = File.ReadAllLines(dataFile);
+    temporaryData = File.ReadAllLines(dataStore);
+    tempInfo = File.ReadAllLines(dataStorage);
+}
+
+<table>
+    @foreach (string dataline in tempData)
+    {
+        <tr>
+            @foreach (string dataItem in dataline.Split(delimiter))
+            {
+                <td>
+                    @dataItem
+                </td>
+            }
+        </tr>
+    }
+</table>
+<br />
+<br />
+<h3>Donors</h3>
+
+<table>
+    @foreach (string dataline in temporaryData)
+    {
+        <tr>
+            @foreach (string dataItem in dataline.Split(delimiter))
+            {
+                <td>
+                    @dataItem
+                </td>
+            }
+        </tr>
+    }
+</table>
+<br />
+<br />
+
+<h3>Targetted areas</h3>
+<table>
+    @foreach (string dataline in tempInfo)
+    {
+        <tr>
+            @foreach (string dataItem in dataline.Split(delimiter))
+            {
+                <td>
+                    @dataItem
+                </td>
+            }
+        </tr>
+    }
+</table>
+
+
+
+

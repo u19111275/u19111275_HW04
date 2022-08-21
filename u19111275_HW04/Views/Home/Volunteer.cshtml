@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Volunteer";
+}
+
+<h2>Volunteers</h2>
+
+@{ 
+    if(IsPost)
+    {
+        var field1 = Request["f1"];
+        var field2 = Request["f2"];
+        var field3 = Request["f3"];
+        var field4 = Request["f4"];
+        var field5 = Request["f5"];
+        var tempData = field1 + " , " + field2 + " , " + field3 + " , " + field4+" , " + field5+ Environment.NewLine;
+
+        var dataFile = Server.MapPath("~/App_Data/Volunteers.txt");
+        File.AppendAllText(dataFile, tempData);
+    }
+}
+
+<form id="form1" method="post">
+    <table>
+        <tr>
+            <td>
+                <p>Name: </p>
+            </td>
+
+            <td>
+                <input id="field1" name="f1" type="text" />
+            </td>
+        <tr />
+        <tr>
+
+            <td>
+                <p>Surname: </p>
+            </td>
+
+            <td>
+                <input id="field2" name="f2" type="text" />
+            </td>
+        <tr />
+        <tr>
+
+            <td>
+                <p>Email Address: </p>
+            </td>
+
+            <td>
+                <input id="field3" name="f3" type="text" />
+            </td>
+        <tr />
+
+        <tr>
+
+            <td>
+                <p>Subject: </p>
+            </td>
+
+            <td>
+                <input id="field4" name="f4" type="text" />
+            </td>
+        <tr />
+
+        <tr>
+
+            <td>
+                <p>Years of Experience </p>
+            </td>
+
+            <td>
+                <input id="field5" name="f5" type="text" />
+            </td>
+        <tr />
+
+        <tr>
+
+            <td>
+                <p>&nbsp;</p>
+            </td>
+            <td>
+                <input type="submit" value="Submit" />
+            </td>
+        </tr>
+    </table>
+</form>
+

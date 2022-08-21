@@ -1,0 +1,6 @@
+Luyanda , Sompa , sompaluyanda21@gmail.com
+Sifiso , Ramsa , Ramsa@gmail.com
+Siya , Skhova , Skhova@gmail.com
+Luyanda , Sompa , sompaluyanda21@gmail.com , Mathematics , 9
+Sifiso , Ramsa , Ramsa@gmail.com , English , 3
+Vosloorus , Skhova , sompaluyanda21@gmail.com , English , 4
